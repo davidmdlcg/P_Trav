@@ -1,0 +1,4 @@
+#Sun Feb 04 21:00:57 CET 2018
+base.0=/Users/DvdMACAir/Downloads/PongG7-2018/android/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
