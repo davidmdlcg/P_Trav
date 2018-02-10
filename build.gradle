@@ -96,17 +96,57 @@ tasks.eclipse.doLast {
     delete ".project"
 }
 
+
+ext {
+    archivo = project.hasProperty('archivo') ? project.property('archivo') : 'defaultName'
+}
+
+
+task extraerRama (type: Exec){
+        
+        description 'Pulls git.'
+        commandLine "git", "pull"
+    
+
+}
+
+task actualizarRamaYSubir (type: Exec){
+        
+        description 'Push git.'
+        commandLine "git", "push"
+    
+
+}
+
+task hola {
+doLast{
+    println "Holaaaaaaaa"
+}
+}
+
 task adios {
-    doLast {
-        println 'Hola'
-    }
-
+doLast{
+    println "Adddiiiosssss"
+}
 }
 
-// TAREA PARA INSTALAR Y EJECUTAR
-task desplegarAplicacion {
-    dependsOn ':android:installDebug'
-    dependsOn ':android:run'
-    println ':android:run'
-}
+actualizarRamaYSubir.dependsOn('extraerRama')
+actualizarRamaYSubir.dependsOn(':core:compileJava')
+
+tasks.getByPath(':core:compileJava').mustRunAfter(':extraerRama')
+
+
+
+//tasks.getByPath('android:installDebug').mustRunAfter('root:extraerRama')
+
+
+//tasks.getByPath('android:installDebug').mustRunAfter root:extraerRama
+
+
+
+//tasks.getByPath('adios').doFirst(hola)
+
+
+
+
 
