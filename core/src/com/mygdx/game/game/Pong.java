@@ -9,6 +9,6 @@ public class Pong extends Game {
     @Override
     public void create() {
         setScreen(new GameScreen());
-//Comentario para rama HU13T1 P1 P2
+//Comentario para rama HU13T1 P1 P2 P3
     }
 }
