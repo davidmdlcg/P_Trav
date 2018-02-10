@@ -8,7 +8,7 @@ public class Pong extends Game {
 // Proyecto Dos: Comentario para rama HU13T1 P1
     @Override
     public void create() {
-        setScreen(new GameScreen()).pum;
+        setScreen(new GameScreen());
 //Comentario para rama HU13T1 P1 P2
     }
 }
