@@ -175,3 +175,5 @@ task appStart(type: Exec) {
 afterEvaluate {
     appStart.dependsOn(installDebug)
 }
+
+
