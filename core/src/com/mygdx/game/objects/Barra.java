@@ -30,7 +30,7 @@ public class Barra {
                 position.add(velocity.cpy().scl(delta));
             }
         } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
-            this.position.y = Gdx.graphics.getHeight()-this.height;
+            this.position.y = (float)Gdx.graphics.getHeight()-this.height;
             position.add(velocity.cpy().scl(delta));
         }
 
@@ -50,7 +50,7 @@ public class Barra {
                 position.add(velocity.cpy().scl(delta));
             }
         } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
-            this.position.x =this.widhtT - this.width;
+            this.position.x =(float)this.widhtT - this.width;
             position.add(velocity.cpy().scl(delta));
 
         }
@@ -64,7 +64,7 @@ public class Barra {
         }
 
         if(this.position.y == 0){
-            this.position.y =this.widhtT - this.width;
+            this.position.y =(float)this.widhtT - this.width;
             position.add(velocity.cpy().scl(delta));
         }
 

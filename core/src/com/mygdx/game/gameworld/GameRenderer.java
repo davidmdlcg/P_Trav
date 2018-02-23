@@ -83,7 +83,7 @@ public class GameRenderer extends ApplicationAdapter{
         TextureRegion = new TextureRegion(myTexture);
         TexRegionDrawable = new TextureRegionDrawable(TextureRegion);
         button = new ImageButton(TexRegionDrawable); //Set the button up
-        button.setBounds(width-150,20,150,150);
+        button.setBounds((float)width-150,20,150,150);
 
         //disparar
         button.addListener(new InputListener() {
@@ -128,7 +128,7 @@ public class GameRenderer extends ApplicationAdapter{
         batch.begin();
         font.setColor(Color.GREEN);
         font.getData().setScale(3,3);
-        font.draw(batch,"DisparosLeft "+vidas,width/(5/2),50);
+        font.draw(batch,"DisparosLeft "+vidas,(float)width/((float)5/2),50);
         batch.end();
 
         //dibujamos le pad
