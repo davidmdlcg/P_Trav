@@ -212,6 +212,8 @@ task desplegarApp {
 }
 
 
+
+
 tasks.getByPath(':android:installDebug').mustRunAfter(':iniciarEmulador')
 tasks.getByPath(':ejecutarApp').mustRunAfter(':android:installDebug')
 
