@@ -12,15 +12,17 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
         classpath "gradle.plugin.com.pledgecomputers:gradle-selenium-plugin:1.0.8"
-        
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
 
     }
 }
+
 
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
     apply plugin: "com.pledgecomputers.gradle.spawn"
+
 
     version = '1.0'
     ext {
@@ -40,8 +42,10 @@ allprojects {
     }
 }
 
+
 project(":desktop") {
     apply plugin: "java"
+    apply plugin: "org.sonarqube"
 
 
     dependencies {
@@ -56,6 +60,16 @@ project(":desktop") {
 
 project(":android") {
     apply plugin: "android"
+    apply plugin: "org.sonarqube"
+
+    sonarqube {
+        properties {
+            property "sonar.host.url", "https://sonarcloud.io"
+            property "sonar.organization","davidmdlcg-github"
+            property "sonar.login", "bae3cbecf64fab4806fa42f36d833d42ef8b05de"
+        }
+    }
+
 
     configurations { natives }
 
@@ -85,6 +99,7 @@ project(":android") {
 
 project(":core") {
     apply plugin: "java"
+    apply plugin: "org.sonarqube"
 
 
     dependencies {
