@@ -14,6 +14,9 @@ buildscript {
         classpath "gradle.plugin.com.pledgecomputers:gradle-selenium-plugin:1.0.8"
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
 
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
+
+
     }
 }
 
@@ -22,6 +25,7 @@ allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
     apply plugin: "com.pledgecomputers.gradle.spawn"
+
 
 
     version = '1.0'
@@ -93,7 +97,7 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
-        
+
     }
 }
 
@@ -101,12 +105,20 @@ project(":core") {
     apply plugin: "java"
     apply plugin: "org.sonarqube"
 
+    apply plugin: 'org.junit.platform.gradle.plugin'
+
+
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
         
+    }
+
+    dependencies {
+        testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0")
+        testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
     }
 }
 
@@ -232,6 +244,15 @@ task desplegarApp {
 tasks.getByPath(':android:installDebug').mustRunAfter(':iniciarEmulador')
 tasks.getByPath(':ejecutarApp').mustRunAfter(':android:installDebug')
 
+subprojects{
+    sonarqube{
+        properties{
+            property "sonar.host.url","https://sonarcloud.io"
+            property "sonar.organization","davidmdlcg-github"
+            property "sonar.login","bae3cbecf64fab4806fa42f36d833d42ef8b05de"
+        }
+    }
+}
 
 
 
