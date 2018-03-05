@@ -35,6 +35,7 @@ public class GameRenderer extends ApplicationAdapter{
     public GameRenderer(GameWorld world, int width, int hieght){
         this.width=width;
         myWorld = world;
+        TextureRegion textureRegion;
         OrthographicCamera cam = new OrthographicCamera();
         cam.setToOrtho(true, width, hieght);
         shapeRenderer = new ShapeRenderer();
@@ -66,7 +67,7 @@ public class GameRenderer extends ApplicationAdapter{
 
         //make button
         Texture myTexture = new Texture("data/boton.png");
-        TextureRegion textureRegion = new TextureRegion(myTexture);
+        textureRegion = new TextureRegion(myTexture);
         TextureRegionDrawable texRegionDrawable = new TextureRegionDrawable(textureRegion);
         ImageButton button = new ImageButton(texRegionDrawable); //Set the button up
         button.setBounds((float)width-150,20,150,150);

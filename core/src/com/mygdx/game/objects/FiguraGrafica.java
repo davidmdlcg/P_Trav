@@ -45,6 +45,10 @@ abstract class FiguraGrafica {
         this.getPosition().x = x;
     }
 
+    public void updateX(float x) {
+        this.getPosition().x += x;
+    }
+
     public void setY(float y) {
         this.getPosition().y = y;
     }

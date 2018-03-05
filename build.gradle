@@ -66,15 +66,6 @@ project(":android") {
     apply plugin: "android"
     apply plugin: "org.sonarqube"
 
-    sonarqube {
-        properties {
-            property "sonar.host.url", "https://sonarcloud.io"
-            property "sonar.organization","davidmdlcg-github"
-            property "sonar.login", "bae3cbecf64fab4806fa42f36d833d42ef8b05de"
-        }
-    }
-
-
     configurations { natives }
 
     dependencies {
@@ -106,20 +97,67 @@ project(":core") {
     apply plugin: "org.sonarqube"
 
     apply plugin: 'org.junit.platform.gradle.plugin'
+/*  No funciona la versioon nueva con android studio
 
+    ext.junit4Version        = '4.12'
+    ext.junitVintageVersion  = '5.1.0'
+    ext.junitPlatformVersion = '1.1.0'
+    ext.junitJupiterVersion  = '5.1.0' */
+    ext.log4jVersion         = '2.9.0'
+
+    ext.junit4Version        = '4.12'
+    ext.junitVintageVersion  = '4.12.0-M4'
+    ext.junitPlatformVersion = '1.0.0-M4'
+    ext.junitJupiterVersion  = '5.0.0-M4'
+
+
+    compileTestJava {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+        options.compilerArgs += '-parameters'
+    }
+
+    junitPlatform {
+        // platformVersion '1.1.0'
+        filters {
+            engines {
+                // include 'junit-jupiter', 'junit-vintage'
+                // exclude 'custom-engine'
+            }
+            tags {
+                // include 'fast'
+                exclude 'slow'
+            }
+            // includeClassNamePattern '.*Test'
+        }
+        // configurationParameter 'junit.jupiter.conditions.deactivate', '*'
+        // enableStandardTestTask true
+        // reportsDir file('build/test-results/junit-platform') // this is the default
+        logManager 'org.apache.logging.log4j.jul.LogManager'
+    }
 
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-        
+
+        testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
+
+        testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
+        testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}") //launcher to override bundled one
+        testRuntime("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")//same for runner
+
+        testCompile("junit:junit:${junit4Version}")
+        testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
+
+        testCompile "org.mockito:mockito-core:2.15.0"
+
+        compile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
+        compile "junit:junit:${junit4Version}"
+        compile "org.mockito:mockito-core:2.15.0"
     }
 
-    dependencies {
-        testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0")
-        testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0")
-    }
 }
 
 tasks.eclipse.doLast {
@@ -151,6 +189,7 @@ task actualizarRamaYSubir (type: Exec){
 task hola {
 doLast{
     println "Holaaaaaaaa"
+    println JavaVersion.current()
 }
 }
 
