@@ -205,8 +205,11 @@ doLast{
 
 actualizarRamaYSubir.dependsOn('extraerRama')
 actualizarRamaYSubir.dependsOn(':core:compileJava')
+actualizarRamaYSubir.dependsOn(':core:sonarqube')
 
 tasks.getByPath(':core:compileJava').mustRunAfter(':extraerRama')
+tasks.getByPath(':core:sonarqube').mustRunAfter(':core:compileJava')
+
 
 
 
@@ -293,9 +296,13 @@ subprojects{
             property "sonar.host.url","https://sonarcloud.io"
             property "sonar.organization","davidmdlcg-github"
             property "sonar.login","bae3cbecf64fab4806fa42f36d833d42ef8b05de"
+            property "sonar.exclusions"," src/test/**"
+    //        property "sonar.sources","src/main"
+    //        property "sonar.tests","src/test"
         }
     }
 }
+
 
 
 

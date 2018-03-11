@@ -90,6 +90,18 @@ class BarraTest {
         assertEquals(posicionEsperada,posicionActual);
     }
 
+    @Disabled
+    @Test
+    @DisplayName("La pala al pasarse del borde Izquierdo (x=1440) de la pantalla de mueve al borde derecho (x=1)")
+    void falla(){
+        Vector2 posicionInicialDondeTocaElBordeX = new Vector2(1440,1200);
+        Vector2 posicionEsperada = new Vector2(1,1200);
+        barraParaTest.setPosition(posicionInicialDondeTocaElBordeX.cpy());
+        barraParaTest.update(tiempoEntreCiclo);
+        Vector2 posicionActual = barraParaTest.getPosition();
+        assertEquals(posicionEsperada,-54);
+    }
+
 
 
 }
