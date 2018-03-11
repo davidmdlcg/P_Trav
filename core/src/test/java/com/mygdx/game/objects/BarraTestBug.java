@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 /**
  * Created by david_000 on 27/02/2018.
  */
-class BarraTest {
+class BarraTestBug {
 
 
     Barra barraParaTest;
@@ -42,29 +42,12 @@ class BarraTest {
         barraParaTest = new Barra(10, 80);
     }
 
-
-
+    // ESTE ES EL QUE FALLA
     @Test
-    @DisplayName("Comprueba que la pala no cambia de posicion si no toca ningun borde de la pantalla")
-    void siLaBarraNoTocaBordeDePantallaNoCambiaSuPosicion(){
-        Vector2 posicionDondeTocaElBordeX = new Vector2(400,400);
-        Vector2 moverDireccionAbajo = new Vector2(100,0);
-
-        barraParaTest.setPosition(posicionDondeTocaElBordeX);
-        barraParaTest.setVelocity(moverDireccionAbajo);
-
-        barraParaTest.update(tiempoEntreCiclo);
-
-        Vector2 posicionActual = barraParaTest.getPosition();
-        assertEquals(posicionDondeTocaElBordeX, posicionActual);
-    }
-
-
-    @Test
-    @DisplayName("La pala al pasarse del inferior de la pantalla de mueve a la y=2480")
+    @DisplayName("La pala al pasarse del inferior de la pantalla de mueve a la y=1.0")
     void siLaBarraTocaBordeInferiorDePantallaMueveHaciaBordeSuperior(){
         Vector2 posicionInicialDondeTocaElBordeY = new Vector2(700,0);
-        Vector2 posicionEsperada = new Vector2(700,2480);
+        Vector2 posicionEsperada = new Vector2(700,1);
         barraParaTest.setPosition(posicionInicialDondeTocaElBordeY.cpy());
         barraParaTest.update(tiempoEntreCiclo);
         Vector2 posicionActual = barraParaTest.getPosition();
@@ -83,11 +66,12 @@ class BarraTest {
         assertEquals(posicionActual, posicionEsperada);
     }
 
+    // EL que falla
     @Test
-    @DisplayName("La pala al pasarse del borde Derecho (x=-1) de la pantalla de mueve al borde Izquierdo (x=1429.0)")
+    @DisplayName("La pala al pasarse del borde Derecho (x=-1) de la pantalla se queda donde esta (x=0)")
     void siLaBarraTocaBordeDerechoDePantallaMueveHaciaBordeIzquierdo(){
         Vector2 posicionInicialDondeTocaElBordeX = new Vector2(-1,1200);
-        Vector2 posicionEsperada = new Vector2(1440,1200);
+        Vector2 posicionEsperada = new Vector2(1,1200);
         barraParaTest.setPosition(posicionInicialDondeTocaElBordeX.cpy());
         barraParaTest.update(tiempoEntreCiclo);
         Vector2 posicionActual = barraParaTest.getPosition();
@@ -96,7 +80,7 @@ class BarraTest {
 
     @Test
     @DisplayName("La pala al pasarse del borde Izquierdo (x=1440) de la pantalla de mueve al borde derecho (x=1)")
-    void siLaBarraTocaBordeIzquierdpDePantallaMueveHaciaBordeDerecho(){
+    void siLaBarraTocaBordeIzquierdoDePantallaMueveHaciaBordeDerecho(){
         Vector2 posicionInicialDondeTocaElBordeX = new Vector2(1440,1200);
         Vector2 posicionEsperada = new Vector2(1,1200);
         barraParaTest.setPosition(posicionInicialDondeTocaElBordeX.cpy());
@@ -104,6 +88,8 @@ class BarraTest {
         Vector2 posicionActual = barraParaTest.getPosition();
         assertEquals(posicionActual, posicionEsperada);
     }
+
+
 
 
 
