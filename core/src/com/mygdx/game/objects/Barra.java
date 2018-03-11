@@ -36,7 +36,7 @@ public class Barra extends FiguraGrafica {
                 getPosition().add(getVelocity().cpy().scl(delta));
             }
         } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
-            this.getPosition().x =(float)Gdx.graphics.getWidth() - this.width;
+            this.getPosition().x =((float)Gdx.graphics.getWidth()-1) - this.width;
             getPosition().add(getVelocity().cpy().scl(delta));
 
         }
@@ -69,7 +69,7 @@ public class Barra extends FiguraGrafica {
     }
 
     private void moverABordeSuperior(float delta) {
-        this.setY((float)( Gdx.graphics.getHeight())-this.height);
+        this.setY(((float)( Gdx.graphics.getHeight())-1)-this.height);
         getPosition().add(getVelocity().cpy().scl(delta));
     }
 
