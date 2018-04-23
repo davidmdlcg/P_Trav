@@ -7,33 +7,33 @@ android:
   - extra
   - add-on
   - extra
-  
+
   - android-22
   - sys-img-armeabi-v7a-android-22
   - extra-android-m2repository
-  
+
 before_install:
   - chmod +x gradlew
-  
+
   - sudo apt-get install ruby-full
-  
+
   - gem install calabash-android
   - gem install bundle
-  
+
   - cd calabash
   - bundle install
   - cd ..
-  
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-  
+
 cache:
   directories:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
-  
+
 notifications:
   email: true
 
@@ -45,7 +45,7 @@ notifications:
 #  skip_cleanup: true
 #  on:
 #    repo: jjluczyn/PongCS-G7-2018
-#    branches: 
+#    branches:
 #      only:
 #        - master
 after_success:
@@ -59,20 +59,14 @@ addons:
 
     branches:
       - master
-      
-before_script:
-  #- echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
-  #- emulator -avd test -no-skin -no-audio -no-window &
-  #- android-wait-for-emulator
-      - echo no | android create avd --force -n test -t android-23 --abi x86 -no-accel
-      - emulator -avd test -no-skin -no-audio -no-window &
-      - android-wait-for-emulator
-      - adb shell setprop dalvik.vm.dexopt-flags v=n,o=v
 
+before_script:
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -gpu host -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
   - adb shell input keyevent 82 &
   - adb logcat > logcat.log &
 
-      
 script:
   - cd calabash
   - keytool -genkey -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
@@ -85,8 +79,8 @@ script:
   - ./gradlew cucumber || true
   - ./gradlew generateCucumberReports
   - cat logcat.log
-  
-  
+
+
 env:
   global:
   - ADB_INSTALL_TIMEOUT=20
