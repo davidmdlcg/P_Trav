@@ -78,6 +78,7 @@ script:
   - ./gradlew clean build connectedCheck assemble sonarqube
   - ./gradlew cucumber || true
   - ./gradlew generateCucumberReports
+  - cat logcat.log
   
   
 env:
