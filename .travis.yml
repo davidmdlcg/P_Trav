@@ -1,20 +1,84 @@
 language: android
+dist: trusty
 android:
   components:
-    # Uncomment the lines below if you want to
-    # use the latest revision of Android SDK Tools
-    - tools
-    - platform-tools
+  - build-tools-26.0.2
+  - android-26
+  - extra
+  - add-on
+  - extra
+  
+  - android-22
+  - sys-img-armeabi-v7a-android-22
+  - extra-android-m2repository
+  
+before_install:
+  - chmod +x gradlew
+  
+  - sudo apt-get install ruby-full
+  
+  - gem install calabash-android
+  - gem install bundle
+  
+  - cd calabash
+  - bundle install
+  - cd ..
+  
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+  
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+  - "$HOME/.android/build-cache"
+  
+notifications:
+  email: true
 
-    # The BuildTools version used by your project
-    - build-tools-26.0.2
+#deploy:
+#  provider: releases
+#  #api_key:
+#  #  secure: FaqDaJ+Ox4wH/y1ayarB/cTeInTPKeXpfT6s9Tg0VroEECbDtUb18xMjahswV0veDcRJNsGfRQh5umxCBnidcF+BsjfGbmnram9qyw2VTXERJ/UWkzEw9iylixfhaFRD/9S5KwrYI6xdwd7d1I9K8mYznrUaXtYwBJVJEX4I5Yx79MoCVgZ0mmC6733l/iuWW3HdSZAuFGTyexpSxI/aYDAgG5XipmF8aSj/gaBSzRoUOXhSDdSQSl+GU8B4M8DN2+Nyt183iqoX9xI946Qv/QTM2GBUk5Culn7g02XqbJbL2ONupAUFcblVLutliJYq/7PbByGaECbpSqNMpvnCfjHArfT5oZLwmqCJh4CBhl+v4r8VFD2SOijdstlbab1RiLHri9RvLt3ifQW0SBXFx/JQI6rDgUKFq4FUVA+m5TxnaSPchBsHTRQXJs289neNGZhX2hqKoL8hquGDSL8ZZuvLsdmCRtP5+fCZq4356pUQ/T8th2NWUI839Qwjg4riCKwDoKbl7UXYZBDsVi6AAMpdVwMr0X9krXxmVP/UCAwVvlxtuGWxIc1wtzwpNTOiI5DS/rfX86JkAcXonvBFfJPZoRq2C378YgHstnO3CQ8vc7GoZIN2E1fLXhpNK2vVlGCPjSRc0OjY8Gx8y8M3e1XDmAAQlMSwnOcsGxU8JoU=
+#  file: android/build/outputs/apk/release/android-release-unsigned.apk
+#  skip_cleanup: true
+#  on:
+#    repo: jjluczyn/PongCS-G7-2018
+#    branches: 
+#      only:
+#        - master
+after_success:
+  - sh magic.sh
 
-    # The SDK version used to compile your project
-    - android-26
+addons:
+  sonarcloud:
+    organization: "sergiopaniego-github"
+    token:
+      secure: ppByHxIINheS2UmjNIUAX7KH/QvTG0mR4RW/RqE0tzBTIDUVRQiW5z7jTZTZdr8lWG5cWDpiHjKh7a6J0kGWSjAq2Qbg2x8D14egCKu4Oq7WYaa4HI6KMVjkH1CWJSfX/yPQda03NBRfuarkeDfUm8ZQIp9ydH8EiTvF3jh6bGnhV5O4gTVRWNWO0Ow0K51WIahC8zMHe3Zmj/7X2BBHv3vQe1axN/SfBNwFIZniamZDM0rZIxi8fuiLZoPBdi0WsAAG7HzLcnyCbhpLY9RO+c8aBL2z1a7N/RJlg12Vl/Peaxse6dfieq/bQfKZUFLWt8Ekhy8Q2X0nMouwF8g6k6wouig6LFHsiEUvRYZWYsXp85TL+gILut0AWbm1OaGcbdkW00naYEXJZ9uMRVfWtGV9ELGvRDNa/Mf2V2cvbSzTXgZmsaNSMjhtonaYWGvlxX8SYpHEmEGg99Q+sFbWzvJO8qUoBULD3R5vLjh4WfzsaMVhcSbbenI1/8LGXInRyw1B5Hd5DdpdnrwQc3//BJawRC5JI2W0CzgVMcVKLZYTdjdBIKMTH8Bn5N0TQOXNkCvLc3SSAvFBznrwe2rIpHg0JHZUiuNEW34A6jzf4QbFkVTK8S7zl6yl/kuce2N/Hx/Z4qw8B54IlcP4in0++r5KeoSyVLkOtg8+3vLcesQ=
 
-    # Additional components
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - addon-google_apis-google-26
-
+    branches:
+      - master
+      
+before_script:
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
+      
+script:
+  - cd calabash
+  - keytool -genkey -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+  - bundle exec calabash-android resign android-release-unsigned.apk
+  - bundle exec calabash-android run android-release-unsigned.apk || true
+  #- adb logcat *:E
+  - cd ..
+  # other script steps might be done before running the actual analysis
+  - ./gradlew clean build connectedCheck assemble sonarqube
+  - ./gradlew cucumber || true
+  - ./gradlew generateCucumberReports
+  
+  
+env:
+  global:
+  - ADB_INSTALL_TIMEOUT=20

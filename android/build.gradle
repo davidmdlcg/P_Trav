@@ -1,5 +1,5 @@
 android {
-    buildToolsVersion '26.0.2'
+    buildToolsVersion "26.0.1"
     compileSdkVersion 26
     sourceSets {
         main {
@@ -16,16 +16,6 @@ android {
     }
     packagingOptions {
         exclude 'META-INF/robovm/ios/robovm.xml'
-        exclude 'META-INF/DEPENDENCIES'
-        exclude 'META-INF/LICENSE'
-        exclude 'META-INF/LICENSE.txt'
-        exclude 'META-INF/license.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/notice.txt'
-        exclude 'META-INF/ASL2.0'
-        exclude 'META-INF/LICENSE.md'
-        exclude 'META-INF/LICENSE-notice.md'
     }
     defaultConfig {
         applicationId "com.mygdx.pong"
@@ -40,17 +30,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
-    compileOptions {
-        sourceCompatibility 1.8
-        targetCompatibility 1.8
-    }
-
     lintOptions {
-        warning 'InvalidPackage'
+        abortOnError false
     }
-
 
 }
 
@@ -101,33 +83,8 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.mygdx.pong/com.mygdx.game.AndroidLauncher', '-a', 'android.intent.action.MAIN', '-c','android.intent.category.LAUNCHER'
-}
-
-
-/* ------------ ORIGINAL
-task run(type: Exec) {
-    def path
-    def localProperties = project.file("../local.properties")
-    if (localProperties.exists()) {
-        Properties properties = new Properties()
-        localProperties.withInputStream { instr ->
-            properties.load(instr)
-        }
-        def sdkDir = properties.getProperty('sdk.dir')
-        if (sdkDir) {
-            path = sdkDir
-        } else {
-            path = "$System.env.ANDROID_HOME"
-        }
-    } else {
-        path = "$System.env.ANDROID_HOME"
-    }
-
-    def adb = path + "/platform-tools/adb"
     commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.mygdx.pong/com.mygdx.pong.AndroidLauncher'
 }
-*/
 
 // sets up the Android Eclipse project, using the old Ant based build.
 eclipse {
@@ -140,8 +97,8 @@ eclipse {
     }
 
     jdt {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = 1.6
+        targetCompatibility = 1.6
     }
 
     classpath {
@@ -182,20 +139,3 @@ idea {
         }
     }
 }
-
-
-task appStart(type: Exec) {
-    doLast{
-        // linux 
-        commandLine 'adb', 'shell', 'am', 'start', '-n', 'com.mygdx.pong/'
-
-        // windows
-        // commandLine 'cmd', '/c', 'adb', 'shell', 'am', 'start', '-n', 'com.example/.MyActivity'      
-    }
-} 
-
-afterEvaluate {
-    appStart.dependsOn(installDebug)
-}
-
-

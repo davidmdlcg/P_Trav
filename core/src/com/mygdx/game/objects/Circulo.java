@@ -30,7 +30,7 @@ public class Circulo extends FiguraGrafica{
             this.getPosition().add(getVelocity().cpy().scl(delta));
 
         }
-        if (this.getPosition().x + this.radio < this.widhtT) {// si la bola esta a la derecha de la pala la pinta
+        if (this.getPosition().x + this.radio < Gdx.graphics.getWidth()) {// si la bola esta a la derecha de la pala la pinta
             if (this.getVelocity().x > 0) {//si la bola se mueve la pinta
                 getPosition().add(getVelocity().cpy().scl(delta));
             }
@@ -52,7 +52,7 @@ public class Circulo extends FiguraGrafica{
         }
 
 
-        if (this.getPosition().y + this.radio < this.heightT) {//si la parte de abajo de la bola es amyor que la altura la pinta
+        if (this.getPosition().y + this.radio < Gdx.graphics.getHeight()) {//si la parte de abajo de la bola es amyor que la altura la pinta
             if (this.getVelocity().y > 0) {//si la bola se mueve pinta la bola
                 getPosition().add(getVelocity().cpy().scl(delta));
             }

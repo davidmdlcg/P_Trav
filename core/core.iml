@@ -30,6 +30,52 @@
     <orderEntry type="library" exported="" scope="PROVIDED" name="gdx-box2d-1.9.6" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="gdx-freetype-1.9.6" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="gdx-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="cucumber-java-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="cucumber-junit-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="junit-4.12" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="mockito-core-2.15.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="cucumber-core-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="byte-buddy-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="byte-buddy-agent-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="objenesis-2.6" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="cucumber-html-0.2.6" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="cucumber-jvm-deps-1.0.6" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="gherkin-5.0.0" level="project" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="tag-expressions-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="gdx-box2d-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="gdx-freetype-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="gdx-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="cucumber-java-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="cucumber-junit-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="junit-4.12" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="mockito-core-2.15.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="cucumber-core-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="byte-buddy-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="byte-buddy-agent-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="objenesis-2.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="cucumber-html-0.2.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="cucumber-jvm-deps-1.0.6" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="gherkin-5.0.0" level="project" />
+    <orderEntry type="library" exported="" scope="RUNTIME" name="tag-expressions-1.1.1" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="gdx-box2d-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="gdx-freetype-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="gdx-1.9.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="cucumber-java-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="cucumber-junit-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="mockito-core-2.15.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="cucumber-core-2.4.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="byte-buddy-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="byte-buddy-agent-1.7.9" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="objenesis-2.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="cucumber-html-0.2.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="cucumber-jvm-deps-1.0.6" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="gherkin-5.0.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="tag-expressions-1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="core.core-1.0" level="project" />
     <orderEntry type="library" exported="" name="core.core-1.0" level="project" />
     <orderEntry type="library" exported="" name="core.core-1.0" level="project" />
     <orderEntry type="library" exported="" name="core.core-1.0" level="project" />

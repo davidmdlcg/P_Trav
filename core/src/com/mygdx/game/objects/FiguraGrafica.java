@@ -1,22 +1,16 @@
 package com.mygdx.game.objects;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Vector2;
 
-/**
- * Created by DvdMACAir on 26/2/18.
- */
 
 abstract class FiguraGrafica {
 
-    protected int heightT;
-    protected int widhtT;
+
     private Vector2 position;
     private Vector2 velocity;
 
     FiguraGrafica() {
-        this.widhtT= Gdx.graphics.getWidth();
-        this.heightT = Gdx.graphics.getHeight();     //la altura de la pantalla
+
     }
 
 

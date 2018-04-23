@@ -36,7 +36,7 @@ public class Barra extends FiguraGrafica {
                 getPosition().add(getVelocity().cpy().scl(delta));
             }
         } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
-            this.getPosition().x =((float)Gdx.graphics.getWidth()-1) - this.width;
+            this.getPosition().x =(float)Gdx.graphics.getWidth() - this.width;
             getPosition().add(getVelocity().cpy().scl(delta));
 
         }
@@ -51,43 +51,22 @@ public class Barra extends FiguraGrafica {
     }
 
     protected void chocarEnY(float delta) {
-        if (estaPorEncimaDelBordeInferior()) {
+        if (this.getY() >= -1) {//si la parte de arriba de la pala es menor que 0 pinta la bola
+            if (this.getVelocity().y < 0) {//si la pala se mueve que la pinte
+                getPosition().add(getVelocity().cpy().scl(delta));
+            }
+        } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
+            this.setY((float) Gdx.graphics.getHeight()-this.height);
             getPosition().add(getVelocity().cpy().scl(delta));
-        } else {
-            moverABordeSuperior(delta);
         }
-        if (estaPorDebajoDelBordeSuperior()) {
+        if (this.getY() + this.height < Gdx.graphics.getHeight()) {//si la parte de abajo de la pala es amyor que la altura la pinta
+            if (this.getVelocity().y > 0) {//si la pala se mueve pinta la bola
+                getPosition().add(getVelocity().cpy().scl(delta));
+            }
+        } else {//si no es ninguna la velocidad actual se convierte en la contraria y la pinta
+            this.setY(1);
             getPosition().add(getVelocity().cpy().scl(delta));
-        } else {
-            moverABordeInferior(delta);
         }
-    }
-
-    private void moverABordeInferior(float delta) {
-        this.setY(1);
-        getPosition().add(getVelocity().cpy().scl(delta));
-    }
-
-    private void moverABordeSuperior(float delta) {
-        this.setY(((float)( Gdx.graphics.getHeight())-1)-this.height);
-        getPosition().add(getVelocity().cpy().scl(delta));
-    }
-
-    protected boolean estaPorDebajoDelBordeSuperior() {
-        return this.getY() + this.height < Gdx.graphics.getHeight();
-    }
-
-    protected boolean estaMoviendoseHaciaArriba(){
-        return this.getVelocity().y > 0;
-    }
-
-
-    protected boolean estaMoviendoseHaciaAbajo(){
-        return this.getVelocity().y < 0;
-    }
-
-    protected boolean estaPorEncimaDelBordeInferior(){
-        return this.getPosition().y > 0;
     }
 
     private void cambiarPosicionYSiLimite(float delta) {

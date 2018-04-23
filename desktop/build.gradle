@@ -1,12 +1,11 @@
 apply plugin: "java"
 
-sourceCompatibility = 1.8
+sourceCompatibility = 1.6
 sourceSets.main.java.srcDirs = [ "src/" ]
 
 project.ext.mainClassName = "com.mygdx.pong.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../android/assets");
 
-/*   ----------- LO COMENTO PARA QUE NO EJECUTE EL DE LA APLICACION
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath
@@ -14,7 +13,6 @@ task run(dependsOn: classes, type: JavaExec) {
     workingDir = project.assetsDir
     ignoreExitValue = true
 }
-*/
 
 task debug(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName

@@ -7,26 +7,23 @@ buildscript {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         jcenter()
         google()
-        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath "gradle.plugin.com.pledgecomputers:gradle-selenium-plugin:1.0.8"
-        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
+        classpath "gradle.plugin.com.github.spacialcircumstances.gradle-cucumber-reporting:gradle-cucumber-reporting:0.0.8"
 
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.1.0'
 
 
     }
 }
 
+plugins {
+    id "org.sonarqube" version "2.6.2"
+}
 
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
-    apply plugin: "com.pledgecomputers.gradle.spawn"
-
-
 
     version = '1.0'
     ext {
@@ -44,12 +41,13 @@ allprojects {
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
-}
 
+
+
+}
 
 project(":desktop") {
     apply plugin: "java"
-    apply plugin: "org.sonarqube"
 
 
     dependencies {
@@ -60,11 +58,17 @@ project(":desktop") {
         compile "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-desktop"
         
     }
+
+    sonarqube {
+        properties {
+            property "sonar.projectName", "G7 - desktop"
+            property "sonar.projectKey", "com.urjc.calidad.g7.desktop"
+        }
+    }
 }
 
 project(":android") {
     apply plugin: "android"
-    apply plugin: "org.sonarqube"
 
     configurations { natives }
 
@@ -88,227 +92,34 @@ project(":android") {
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-freetype-platform:$gdxVersion:natives-x86_64"
-
+        
+    }
+    sonarqube {
+        properties {
+            property "sonar.projectName", "G7 - android"
+            property "sonar.projectKey", "com.urjc.calidad.g7.android"
+        }
     }
 }
 
 project(":core") {
     apply plugin: "java"
-    apply plugin: "org.sonarqube"
-
-    apply plugin: 'org.junit.platform.gradle.plugin'
-/*  No funciona la versioon nueva con android studio
-
-    ext.junit4Version        = '4.12'
-    ext.junitVintageVersion  = '5.1.0'
-    ext.junitPlatformVersion = '1.1.0'
-    ext.junitJupiterVersion  = '5.1.0' */
-    ext.log4jVersion         = '2.9.0'
-
-    ext.junit4Version        = '4.12'
-    ext.junitVintageVersion  = '4.12.0-M4'
-    ext.junitPlatformVersion = '1.0.0-M4'
-    ext.junitJupiterVersion  = '5.0.0-M4'
-
-
-    compileTestJava {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
-        options.compilerArgs += '-parameters'
-    }
-
-    junitPlatform {
-        // platformVersion '1.1.0'
-        filters {
-            engines {
-                // include 'junit-jupiter', 'junit-vintage'
-                // exclude 'custom-engine'
-            }
-            tags {
-                // include 'fast'
-                exclude 'slow'
-            }
-            // includeClassNamePattern '.*Test'
-        }
-        // configurationParameter 'junit.jupiter.conditions.deactivate', '*'
-        // enableStandardTestTask true
-        // reportsDir file('build/test-results/junit-platform') // this is the default
-        logManager 'org.apache.logging.log4j.jul.LogManager'
-    }
 
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
-
-        testCompile("org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}")
-
-        testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitJupiterVersion}")
-        testRuntime("org.junit.platform:junit-platform-launcher:${junitPlatformVersion}")
-        testRuntime("org.junit.platform:junit-platform-runner:${junitPlatformVersion}")
-
-        testCompile("junit:junit:${junit4Version}")
-        testRuntime("org.junit.vintage:junit-vintage-engine:${junitVintageVersion}")
-
-        testCompile "org.mockito:mockito-core:2.15.0"
-
-        compile "org.junit.jupiter:junit-jupiter-api:${junitJupiterVersion}"
-        compile "junit:junit:${junit4Version}"
-        compile "org.mockito:mockito-core:2.15.0"
-
-        testRuntime("org.apache.logging.log4j:log4j-core:${log4jVersion}")
-        testRuntime("org.apache.logging.log4j:log4j-jul:${log4jVersion}")
-
+        
     }
-
+    sonarqube {
+        properties {
+            property "sonar.projectName", "G7 - core"
+            property "sonar.projectKey", "com.urjc.calidad.g7.core"
+        }
+    }
 }
 
 tasks.eclipse.doLast {
     delete ".project"
 }
-
-
-ext {
-    archivo = project.hasProperty('archivo') ? project.property('archivo') : 'defaultName'
-}
-
-
-task extraerRama (type: Exec){
-        
-        description 'Pulls git.'
-        commandLine "git", "pull"
-    
-
-}
-
-task actualizarRamaYSubir (type: Exec){
-        
-        description 'Push git.'
-        commandLine "git", "push"
-    
-
-}
-
-task hola {
-doLast{
-    println "Holaaaaaaaa"
-    println JavaVersion.current()
-}
-}
-
-task adios {
-doLast{
-    println "Adddiiiosssss"
-}
-}
-
-actualizarRamaYSubir.dependsOn('extraerRama')
-actualizarRamaYSubir.dependsOn(':core:compileJava')
-actualizarRamaYSubir.dependsOn(':core:sonarqube')
-
-tasks.getByPath(':core:compileJava').mustRunAfter(':extraerRama')
-tasks.getByPath(':core:sonarqube').mustRunAfter(':core:compileJava')
-
-
-
-
-//tasks.getByPath('android:installDebug').mustRunAfter('root:extraerRama')
-
-
-//tasks.getByPath('android:installDebug').mustRunAfter root:extraerRama
-
-
-
-//tasks.getByPath('adios').doFirst(hola)
-
-task iniciarEmulador{
-    spawn {
-        process {
-            def path
-            def localProperties = project.file("local.properties")
-            if (localProperties.exists()) {
-                Properties properties = new Properties()
-                localProperties.withInputStream { instr ->
-                    properties.load(instr)
-                }
-                def sdkDir = properties.getProperty('sdk.dir')
-                if (sdkDir) {
-                    path = sdkDir
-                } else {
-                    path = "$System.env.ANDROID_HOME"
-                }
-            } else {
-                path = "$System.env.ANDROID_HOME"
-            }
-
-            def emulator = path + "/emulator/emulator"
-            
-            command = [emulator,'-avd', 'Nexus_6_API_25']
-            
-            sleep(10000)
-
-            ready = "emulator: ### WARNING: /etc/localtime does not point to /usr/share/zoneinfo/, can't determine zoneinfo timezone name" 
-            directory = project.projectDir
-            
-
-        }
-    }
-}
-
-task ejecutarApp(type: Exec) {
-    def path
-    def localProperties = project.file("local.properties")
-    if (localProperties.exists()) {
-        Properties properties = new Properties()
-        localProperties.withInputStream { instr ->
-            properties.load(instr)
-        }
-        def sdkDir = properties.getProperty('sdk.dir')
-        if (sdkDir) {
-            path = sdkDir
-        } else {
-            path = "$System.env.ANDROID_HOME"
-        }
-    } else {
-        path = "$System.env.ANDROID_HOME"
-    }
-
-    def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.mygdx.pong/com.mygdx.game.AndroidLauncher', '-a', 'android.intent.action.MAIN', '-c','android.intent.category.LAUNCHER'
-}
-
-task desplegarApp {
-        dependsOn ':iniciarEmulador'
-        dependsOn ':android:installDebug'
-        dependsOn ':ejecutarApp'
-}
-
-
-
-
-tasks.getByPath(':android:installDebug').mustRunAfter(':iniciarEmulador')
-tasks.getByPath(':ejecutarApp').mustRunAfter(':android:installDebug')
-
-subprojects{
-    sonarqube{
-        properties{
-            property "sonar.host.url","https://sonarcloud.io"
-            property "sonar.organization","davidmdlcg-github"
-            property "sonar.login","bae3cbecf64fab4806fa42f36d833d42ef8b05de"
-            property "sonar.exclusions"," src/test/**"
-    //        property "sonar.sources","src/main"
-    //        property "sonar.tests","src/test"
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-

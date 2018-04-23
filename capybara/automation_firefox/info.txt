@@ -1,0 +1,7 @@
+﻿/**** Cucumber + capybara + firefox ****/
+
+Install: 
+	1.- Ruby installer.
+	2.- gem install selenium-webdriver
+
+RUN: "cucumber" in root folder (before feature folder).

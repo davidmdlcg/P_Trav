@@ -1,57 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/DvdMACAir/Downloads/HU13T1/P_Trav/android/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\PongCS-G7-2018\\android\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/DvdMACAir/Downloads/HU13T1/P_Trav/android/res/values/styles.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "17",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "475"
-                    },
-                    "to": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "104",
-                        "endLines": "10",
-                        "endColumns": "12",
-                        "endOffsets": "562"
-                    }
-                },
-                {
-                    "source": "/Users/DvdMACAir/Downloads/HU13T1/P_Trav/android/res/values/strings.xml",
+                    "source": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\PongCS-G7-2018\\android\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "56",
+                        "startOffsets": "59",
                         "endColumns": "48",
-                        "endOffsets": "100"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "48",
-                        "endOffsets": "99"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/Users/DvdMACAir/Downloads/PongG7-2018/android/build/intermediates/res/merged/debug/values_values.arsc.flat",
-            "map": [
-                {
-                    "source": "/Users/DvdMACAir/Downloads/PongG7-2018/android/res/values/strings.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "56",
-                        "endColumns": "48",
-                        "endOffsets": "100"
+                        "endOffsets": "103"
                     },
                     "to": {
                         "startLines": "2",
@@ -62,14 +21,14 @@
                     }
                 },
                 {
-                    "source": "/Users/DvdMACAir/Downloads/PongG7-2018/android/res/values/styles.xml",
+                    "source": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\PongCS-G7-2018\\android\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "19",
                         "endLines": "9",
                         "endColumns": "12",
-                        "endOffsets": "475"
+                        "endOffsets": "484"
                     },
                     "to": {
                         "startLines": "3",
@@ -83,16 +42,16 @@
             ]
         },
         {
-            "outputFile": "/Users/DvdMACAir/Downloads/PongCS-G7-2018/android/build/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\P_Trav\\android\\build\\intermediates\\res\\merged\\debug\\values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/DvdMACAir/Downloads/PongCS-G7-2018/android/res/values/strings.xml",
+                    "source": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\P_Trav\\android\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "56",
+                        "startOffsets": "59",
                         "endColumns": "48",
-                        "endOffsets": "100"
+                        "endOffsets": "103"
                     },
                     "to": {
                         "startLines": "2",
@@ -103,14 +62,14 @@
                     }
                 },
                 {
-                    "source": "/Users/DvdMACAir/Downloads/PongCS-G7-2018/android/res/values/styles.xml",
+                    "source": "C:\\Users\\david_000\\Downloads\\CalidadSoftware\\Sprint 3\\Calabash\\P_Trav\\android\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "17",
+                        "startOffsets": "19",
                         "endLines": "9",
                         "endColumns": "12",
-                        "endOffsets": "475"
+                        "endOffsets": "484"
                     },
                     "to": {
                         "startLines": "3",

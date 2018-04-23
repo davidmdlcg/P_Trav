@@ -1,6 +1,6 @@
 package com.mygdx.game.gameworld;
 
-    import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
@@ -25,7 +25,7 @@ public class GameRenderer extends ApplicationAdapter{
     private GameWorld myWorld;
     private ShapeRenderer shapeRenderer;
     private int width;
-    private Touchpad touchpad;
+    public Touchpad touchpad;
     private Stage stage;
     private SpriteBatch batch;
     private BitmapFont font;
@@ -91,6 +91,67 @@ public class GameRenderer extends ApplicationAdapter{
 
 
     }
+
+    public GameRenderer(GameWorld world, int width, int hieght,OrthographicCamera mockCam,ShapeRenderer mockShapeRenderer,SpriteBatch mockSpriteBatch,BitmapFont mockBitMap,Texture mockTexture,Drawable mockDrawable,TextureRegionDrawable mockTextureRegion,Stage mockStage){
+        this.width=width;
+        myWorld = world;
+        TextureRegion textureRegion;
+        OrthographicCamera cam = mockCam;
+        cam.setToOrtho(true, width, hieght);
+        shapeRenderer = mockShapeRenderer;
+        shapeRenderer.setProjectionMatrix(cam.combined);
+
+        batch = mockSpriteBatch;
+        font = mockBitMap;
+
+
+
+        //Create a touchpad skin
+        Skin touchpadSkin = new Skin();
+        //Set background image
+        touchpadSkin.add("touchBackground", mockTexture);
+        //Set knob image
+        touchpadSkin.add("touchKnob", mockTexture);
+        //Create TouchPad Style
+        Touchpad.TouchpadStyle touchpadStyle = new Touchpad.TouchpadStyle();
+        //Create Drawable's from TouchPad skin
+        Drawable touchBackground = mockDrawable;
+        Drawable touchKnob = mockDrawable;
+        //Apply the Drawables to the TouchPad Style
+        touchpadStyle.background = touchBackground;
+        touchpadStyle.knob = touchKnob;
+        //Create new TouchPad with the created style
+        touchpad = new Touchpad(10, touchpadStyle);
+        //setBounds(x,y,width,height)
+        touchpad.setBounds(20, 20, 300, 300);
+
+        //make button
+        Texture myTexture = mockTexture;
+        TextureRegionDrawable texRegionDrawable = mockTextureRegion;
+        ImageButton button = new ImageButton(texRegionDrawable); //Set the button up
+        button.setBounds((float)width-150,20,150,150);
+
+        //disparar
+        button.addListener(new InputListener() {
+            @Override
+            public boolean touchDown (InputEvent event, float x, float y, int pointer, int button) {
+                Gdx.app.log("", "Click");
+                myWorld.disparo();
+                return true;
+            }
+        });
+
+        //Create a Stage and add TouchPad and button
+        stage = mockStage;
+        stage.addActor(touchpad);
+        stage.addActor(button);
+        Gdx.input.setInputProcessor(stage);
+
+
+
+    }
+
+
     @Override
     public void render() {
         ponerFondoNegro();
@@ -98,7 +159,7 @@ public class GameRenderer extends ApplicationAdapter{
         moverPalaSegunPad();
     }
 
-    private void moverPalaSegunPad() {
+    public void moverPalaSegunPad() {
         myWorld.getBar().setX(myWorld.getBar().getX() + touchpad.getKnobPercentX()*this.width/80);
         myWorld.getBar().setY(myWorld.getBar().getY() - touchpad.getKnobPercentY()*this.width/80);
     }

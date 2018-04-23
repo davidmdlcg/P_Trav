@@ -1,0 +1,15 @@
+﻿/**** Cucumber + capybara + phantomjs
+
+npm ****/ 
+
+Install: 
+	1.- Ruby installer.
+	2.- npm install -g phantomjs
+	3.- install -g phantomjs
+bundle install --path=vendor/bundler
+	4.- RUN: "bundle exec cucumber" in root folder (before feature folder).
+
+// Cambiar versiones si están deprecadas en gemfile
+
+// Hacer "bundle update cucumber" para actualizar si está deprecado.
+bundle exec cucumber

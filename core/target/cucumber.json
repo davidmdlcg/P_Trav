@@ -1,0 +1,1019 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1183654658,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Disparo una bala",
+        "description": "",
+        "id": "disparar-balas;disparo-una-bala;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 143356512,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "tengo 5 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 6
+                }
+              ],
+              "location": "DisparoStep.tengo_balas(int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 524791,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "pulso el boton de disparar",
+            "match": {
+              "location": "DisparoStep.pulso_el_boton_de_disparar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2093478,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "me quedan 4 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 10
+                }
+              ],
+              "location": "DisparoStep.me_quedan_balas(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 108425,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 15,
+        "name": "Disparo una bala",
+        "description": "",
+        "id": "disparar-balas;disparo-una-bala;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 825391,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "tengo 4 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "4",
+                  "offset": 6
+                }
+              ],
+              "location": "DisparoStep.tengo_balas(int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 516671,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "pulso el boton de disparar",
+            "match": {
+              "location": "DisparoStep.pulso_el_boton_de_disparar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 294416,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "me quedan 3 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 10
+                }
+              ],
+              "location": "DisparoStep.me_quedan_balas(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 90096,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Disparo una bala",
+        "description": "",
+        "id": "disparar-balas;disparo-una-bala;;4",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 714088,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "tengo 3 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 6
+                }
+              ],
+              "location": "DisparoStep.tengo_balas(int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 529140,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "pulso el boton de disparar",
+            "match": {
+              "location": "DisparoStep.pulso_el_boton_de_disparar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 343183,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "me quedan 2 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 10
+                }
+              ],
+              "location": "DisparoStep.me_quedan_balas(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 77178,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 17,
+        "name": "Disparo una bala",
+        "description": "",
+        "id": "disparar-balas;disparo-una-bala;;5",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 729931,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "tengo 1 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 6
+                }
+              ],
+              "location": "DisparoStep.tengo_balas(int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 420657,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "pulso el boton de disparar",
+            "match": {
+              "location": "DisparoStep.pulso_el_boton_de_disparar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 301450,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "me quedan 0 balas",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 10
+                }
+              ],
+              "location": "DisparoStep.me_quedan_balas(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 61038,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Gasto todas las balas",
+        "description": "",
+        "id": "disparar-balas;gasto-todas-las-balas",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3639461,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "no me quedan balas por disparar",
+            "match": {
+              "location": "DisparoStep.no_me_quedan_balas_por_disparar()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 531221,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "pulso el boton de disparar",
+            "match": {
+              "location": "DisparoStep.pulso_el_boton_de_disparar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat com.mygdx.test.step.DisparoStep.me_aparece_un_mensaje_indicando_que_he_perdido(DisparoStep.java:75)\n\tat ✽.me aparece un mensaje indicando que he perdido(src/com/mygdx/test/feature/Disparo.feature:22)\n",
+              "duration": 7016844,
+              "status": "pending"
+            },
+            "line": 22,
+            "name": "me aparece un mensaje indicando que he perdido",
+            "match": {
+              "location": "DisparoStep.me_aparece_un_mensaje_indicando_que_he_perdido()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      }
+    ],
+    "name": "Disparar balas",
+    "description": "  Como Profe\n  quiero poder disparar con el palo a la pelota\n  con el objetivo de mejorar mi punteria",
+    "id": "disparar-balas",
+    "keyword": "Feature",
+    "uri": "src/com/mygdx/test/feature/Disparo.feature",
+    "tags": [
+      {
+        "name": "@probar",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1104798815,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 74908,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Mover palo a la izquierda",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-izquierda",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 26179547,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "muevo el joystick hacia la izquierda",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_izquierda()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3505051,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "el palo se desplaza hacia la izquierda",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_la_izquierda()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3122744,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 46748,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "Mover palo a la derecha",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-derecha",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9461564,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "muevo el joystick hacia la derecha",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_derecha()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 331006,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "el palo se desplaza hacia la derecha",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_la_derecha()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6850242,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 50127,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Mover palo a la arriba",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-arriba",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1410200,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "muevo el joystick hacia la arriba",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_arriba()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 328072,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "el palo se desplaza hacia la arriba",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_la_arriba()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 4036234,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 59666,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Mover palo a la abajo",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-abajo",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1042366,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "muevo el joystick hacia la abajo",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_abajo()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 409159,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "el palo se desplaza hacia la abajo",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_la_abajo()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3791278,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 45638,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 26,
+        "name": "Mover palo a la izquierda pasando el borde izquierdo",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-izquierda-pasando-el-borde-izquierdo",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2439469,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "un palo en el limite izquierdo de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_limite_izquierdo_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 345067,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "muevo el joystick hacia la izquierda",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_izquierda()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 288008,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "el palo se desplaza hacia el borde derecho de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_derecho_de_la_pantalla()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1741807,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 88258,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 31,
+        "name": "Mover palo a la derecha pasando el borde derecho",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-derecha-pasando-el-borde-derecho",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5367493,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "un palo en el limite derecho de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_limite_derecho_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 326396,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "muevo el joystick hacia la derecha",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_derecha()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c1440.0\u003e but was:\u003c1.0\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:834)\n\tat org.junit.Assert.assertEquals(Assert.java:575)\n\tat org.junit.Assert.assertEquals(Assert.java:700)\n\tat com.mygdx.test.step.MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_izquierdo_de_la_pantalla(MoverPalaStep.java:245)\n\tat ✽.el palo se desplaza hacia el borde izquierdo de la pantalla(src/com/mygdx/test/feature/MoverPala.feature:34)\n",
+              "duration": 1718413,
+              "status": "failed"
+            },
+            "line": 34,
+            "name": "el palo se desplaza hacia el borde izquierdo de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_izquierdo_de_la_pantalla()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 7561004,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 50685,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 36,
+        "name": "Mover palo a la arriba pasando el borde superior",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-arriba-pasando-el-borde-superior",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10154187,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "un palo en el limite superior de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_limite_superior_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 497702,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "muevo el joystick hacia la arriba",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_arriba()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4155682,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "el palo se desplaza hacia el borde inferior de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_inferior_de_la_pantalla()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      },
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 8011186,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "un palo en el centro de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_centro_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 50831,
+              "status": "passed"
+            },
+            "match": {
+              "location": "DisparoStep.beforeScenario()"
+            }
+          }
+        ],
+        "line": 41,
+        "name": "Mover palo a la abajo pasando el borde inferior",
+        "description": "",
+        "id": "mover-palo;mover-palo-a-la-abajo-pasando-el-borde-inferior",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3391170,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "un palo en el limite inferior de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.un_palo_en_el_limite_inferior_de_la_pantalla()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1718947,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "muevo el joystick hacia la abajo",
+            "match": {
+              "location": "MoverPalaStep.muevo_el_joystick_hacia_la_abajo()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c2560.0\u003e but was:\u003c18.44714\u003e\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat org.junit.Assert.failNotEquals(Assert.java:834)\n\tat org.junit.Assert.assertEquals(Assert.java:575)\n\tat org.junit.Assert.assertEquals(Assert.java:700)\n\tat com.mygdx.test.step.MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_superior_de_la_pantalla(MoverPalaStep.java:280)\n\tat ✽.el palo se desplaza hacia el borde superior de la pantalla(src/com/mygdx/test/feature/MoverPala.feature:44)\n",
+              "duration": 445029,
+              "status": "failed"
+            },
+            "line": 44,
+            "name": "el palo se desplaza hacia el borde superior de la pantalla",
+            "match": {
+              "location": "MoverPalaStep.el_palo_se_desplaza_hacia_el_borde_superior_de_la_pantalla()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@probar"
+          }
+        ]
+      }
+    ],
+    "name": "Mover palo",
+    "description": "  Como Profe\n  quiero que sólo haya un palo que se pueda mover por todo el tablero\n  con el objetivo de poder moverlo por todo el tablero",
+    "id": "mover-palo",
+    "keyword": "Feature",
+    "uri": "src/com/mygdx/test/feature/MoverPala.feature",
+    "tags": [
+      {
+        "name": "@probar",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

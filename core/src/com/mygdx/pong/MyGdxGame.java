@@ -7,8 +7,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MyGdxGame extends ApplicationAdapter {
-	private SpriteBatch batch;
-	private Texture img;
+	SpriteBatch batch;
+	Texture img;
 	
 	@Override
 	public void create () {
