@@ -64,7 +64,7 @@ before_script:
   #- echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   #- emulator -avd test -no-skin -no-audio -no-window &
   #- android-wait-for-emulator
-#
+#vt
       - echo no | android create avd --force -n test -t android-23 --abi x86 -no-accel
       - emulator -avd test -gpu host -no-skin -no-audio -no-window &
       - android-wait-for-emulator
